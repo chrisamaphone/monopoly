@@ -7,4 +7,4 @@ s20 : nat -> nat = \!x. s10 !(s10 !x).
 s50 : nat -> nat = \!x. s20 !(s20 !(s10 !x)).
 s100 : nat -> nat = \!x. s50 !(s50 !x).
 s200 : nat -> nat = \!x. s100 !(s100 !x).
-s500 : nat -> nat = \!x. s200 !(s200 !(s100 x)).
+s500 : nat -> nat = \!x. s200 !(s200 !(s100 !x)).
