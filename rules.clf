@@ -1,0 +1,51 @@
+
+
+%% Encoding of the game of monopoly
+
+nat : type.
+z : nat. s : nat -> nat.
+
+player : type.
+cell : type. % defined in rob's file
+
+total$ : player -> nat -> type.
+atcell : player -> cell -> type.
+
+%% Equipment
+% "The equipment consists of a board, 2 dice, tokens, 32 houses and 12
+% Hotels. There are 16 Chance and 16 Community Chest cards, 28 Title Deed
+% card (one for each property), and play money."
+
+
+%% Rules of play
+% "Starting with the Banker, each player in turn throws the dice. The player
+% with the highest total starts the play. Place your token on the corner
+% marked 'GO;, then throw the dice and move your token
+% in the direction of the arrow) the number of spaces indicated by the dice.
+% After you have completed your play, the turn passes to the left. The tokens
+% remain on the spaces occupied and proceed from that point on the player's
+% next turn. Two or more tokens may rest on the same space at the same time. 
+% Depending on the space your token reaches, you may be entitled to buy real
+% estate or other properties, or be obliged to pay rent, pay taxes, draw a
+% Chance or Community Chest card, Go To Jail, or etc...
+
+
+
+% "If you throw doubles, you move your token as usual, the sum of the two
+% dice, and are subject to any privileges or penalties pertaining to the
+% space on which you land. Retaining the dice, throw again and move your
+% token as before. If you throw doubles three times in succession, move your
+% token immediately to the space marked 'In Jail'."
+
+%% The bank
+% "Besides the Bank's money, the Bank holds the Title Deeds, and the houses
+% and hotels prior to purchase by the players. The Bank pays salaries and
+% bonuses. It sells and auctions properties and hands out the proper Title
+% Deed cards when purchased by a player, it also sells houses and hotels to
+% the players and loans money when required on mortgages.
+% The Bank collects all taxes, fines, loans and interest, and the price of
+% all properties which it sells and auctions. The Bank 'never goes broke.' If
+% the Bank runs out of money, the Banker may issue as much as needed by
+% writing on any ordinary paper."
+
+
