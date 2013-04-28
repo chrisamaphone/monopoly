@@ -1,0 +1,47 @@
+color : type.
+purple :    color.
+lightBlue : color.
+pink :      color.
+orange :    color.
+red :       color.
+yellow :    color.
+green :     color.
+darkBlue :  color.
+
+numForMonopoly : color -> nat -> type.
+purpleMonopoly :    numForMonopoly purple    (s (s z)).
+lightBlueMonopoly : numForMonopoly lightBlue (s (s (s z))).
+pinkMonopoly :      numForMonopoly pink      (s (s (s z))).
+orangeMonopoly :    numForMonopoly orange    (s (s (s z))).
+redMonopoly :       numForMonopoly red       (s (s (s z))).
+yellowMonopoly :    numForMonopoly yellow    (s (s (s z))).
+greenMonopoly :     numForMonopoly green     (s (s (s z))).
+darkBlueMonopoly :  numForMonopoly darkBlue  (s (s z)).
+
+colorOf : position -> color -> type.
+color_1 :  colorOf ma_1 purple.
+color_3 :  colorOf ba_3 purple.
+color_6 :  colorOf oa_6 lightBlue.
+color_8 :  colorOf va_8 lightBlue.
+color_9 :  colorOf ca_9 lightBlue.
+color_11 : colorOf sc_11 pink.
+color_13 : colorOf sa_13 pink.
+color_14 : colorOf va_14 pink.
+color_16 : colorOf sj_16 orange.
+color_18 : colorOf ta_18 orange.
+color_19 : colorOf ny_19 orange.
+color_21 : colorOf ka_21 red.
+color_23 : colorOf ia_23 red.
+color_24 : colorOf ia_24 red.
+color_26 : colorOf aa_26 yellow.
+color_27 : colorOf va_27 yellow.
+color_29 : colorOf mg_29 yellow.
+color_31 : colorOf pa_31 green.
+color_32 : colorOf nc_32 green.
+color_34 : colorOf pa_34 green.
+color_37 : colorOf pp_37 darkBlue.
+color_39 : colorOf pp_39 darkBlue.
+
+costOf : position -> color -> type.
+
+
