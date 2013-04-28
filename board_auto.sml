@@ -3,6 +3,14 @@
 structure Board = 
 struct
  
+val nums = 
+["rollOne",
+ "rollTwo",
+ "rollThree",
+ "rollFour",
+ "rollFive",
+ "rollSix"]
+
 val spaces = 
 ["go_0",
  "ma_1",
@@ -49,9 +57,11 @@ val outs = ref TextIO.stdOut
 
 fun print x = TextIO.output (!outs, x)
 
+fun roll n = List.nth (nums, n-1)
+
 fun dice n = 
    if n > 6 then () 
-   else (print ("d"^Int.toString n^" : d.\n"); dice (n+1)) 
+   else (print (roll n^" : roll.\n"); dice (n+1)) 
 
 fun succ pos n = 
    if n > 6 then () 
@@ -59,7 +69,7 @@ fun succ pos n =
            val this = List.nth (spaces, pos)
            val next = List.nth (spaces, (pos + n) mod 40);
         in print ("succ_"^Int.toString pos^"_"^Int.toString n)
-         ; print (" : succ "^this^" d"^Int.toString n^" "^next^".\n")
+         ; print (" : succ "^this^" "^roll n^" "^next^".\n")
          ; succ pos (n+1)
         end
 
@@ -70,11 +80,11 @@ fun succs pos =
 val () = 
    let val output = TextIO.openOut "board_auto.clf"
    in outs := output
-    ; print "d : type.\n"
+    ; print "roll : type.\n"
     ; dice 1
     ; print "\nposition : type.\n"
     ; app (fn x => (print x; print " : position.\n")) spaces
-    ; print "\nsucc : position -> d -> position -> type.\n"
+    ; print "\nsucc : position -> roll -> position -> type.\n"
     ; succs 0
    end
 
